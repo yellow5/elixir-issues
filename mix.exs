@@ -32,6 +32,7 @@ defmodule Issues.Mixfile do
     [
       {:httpoison, "~> 0.11.1"},
       {:poison, "~> 3.1"},
+      {:ex_doc, "~> 0.15", only: :dev, runtime: false},
     ]
   end
 
