@@ -10,6 +10,13 @@ defmodule Issues.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: [
+       "coveralls": :test,
+       "coveralls.detail": :test,
+       "coveralls.post": :test,
+       "coveralls.html": :test,
+     ],
      deps: deps()]
   end
 
@@ -35,6 +42,7 @@ defmodule Issues.Mixfile do
       {:httpoison, "~> 0.11.1"},
       {:poison, "~> 3.1"},
       {:ex_doc, "~> 0.15", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.6.3", only: :test},
     ]
   end
 
